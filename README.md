@@ -1,7 +1,7 @@
 # TP 1 CPP Mattéo Muzaton & Bastien Moreaux
 
 
-### Exercice 1 :
+### Exercice 1 & 2 :
 Compilation : 
 ```
 g++ -Wall -Wextra -std=c++17 Exo1.cpp -o exercice1
@@ -10,17 +10,6 @@ g++ -Wall -Wextra -std=c++17 Exo1.cpp -o exercice1
 Execution : 
 ```
 ./exercice1
-```
-
-### Exercice 2 :
-Compilation : 
-```
-g++ -Wall -Wextra -std=c++17 Exo1.cpp 
-```
-
-Execution : 
-```
-./a.out 
 ```
 
 ### Exercice 3 :
