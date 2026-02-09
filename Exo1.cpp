@@ -1,108 +1,70 @@
-#include "exercice.h"
+#include <iostream>
+#include <memory>
+using namespace std;
 
-void Exercice1() {
-    // ---------------------------------------------------------
-    // --- PARTIE 1 : Pointeurs bruts (Raw Pointers) ---
-    // ---------------------------------------------------------
-    std::cout << "--- PARTIE 1 : Pointeurs bruts ---" << std::endl;
-
-    // 1. Pointeur sur un entier simple
-    int* p = new int(10);
-
-    // 2. Pointeur sur un entier constant (la valeur est constante)
-    const int* q = new int(20);
-
-    // 3. Pointeur constant sur un entier (l'adresse est constante)
-    int* const r = new int(30);
-
-    std::cout << "p: " << *p << ", q: " << *q << ", r: " << *r << std::endl;
-
-    // Modification de p
-    std::cout << "*p = " << *p << ", p = " << p << " puis p = 40" << std::endl;
-    *p = 40; 
-    std::cout << "*p = " << *p << ", p = " << p << std::endl;
-
-    // Tentative de modification de q (interdit car const int*)
-    std::cout << "*q = " << *q << ", q = " << q << " puis q = 50" << std::endl;
-    std::cout << "Erreur car q pointe vers un entier constant, on ne peut pas modifier la valeur pointée,\n *q = " << *q << ", q = " << q << std::endl;
-
-    // Tentative de modification de r (Note : int* const empêche de changer l'adresse r, mais autorise techniquement *r)
-    std::cout << "*r = " << *r << ", r = " << r << " puis r = 60" << std::endl;
-    std::cout << "Note : r est un pointeur constant. On ne pourrait pas faire r = nouveau_pointeur." << std::endl;
-
-    // Référence dynamique
-    int& s = *new int(40);
-    std::cout << "s: " << s << std::endl;
+void exo1_partie1() {
+    int* p = new int(5);          // Pointeur sur entier
+    const int* q = new int(10);   // Pointeur sur entier constant (la valeur est const)
+    int* const r = new int(10);          // Pointeur constant sur entier (l'adresse est const)
     
-    // IMPORTANT : Désallocation manuelle obligatoire pour éviter les fuites de mémoire
+    int** tabPointeurs = new int*[10];
+    for (int i = 0; i < 10; ++i) {
+        tabPointeurs[i] = new int(i);
+    }
+
+
+
+    for (int i = 0; i < 10; ++i) {
+        delete tabPointeurs[i];
+    }
+    delete[] tabPointeurs;
+    cout << "*p  = " << *p << " p = " << p << " puis *p = 40" << endl;
+    *p = 40;
+    cout << "*p = " << *p << " p = " << p << endl;
     delete p;
-    delete q;
+    p = new int(70);
+    cout << "*p = " << *p << " p = " << p << endl << endl;
+
+    cout << "*q = " << *q << " q = " << q << " puis *q = 90 impossible car type(*q) = const int" << endl;
+    // *q = 90;
+    const int * temp = q;
+    q = new int(100);
+    delete temp;
+    cout << "*q = " << *q << " q = " << q << endl << endl;
+
+    cout << "*r = " << *r << " r = " << r << " puis *r = 110" << endl;
+    *r = 110;
+    cout << "*r = " << *r << " r = " << r << " impossible de changer le pointeur r car r est pointeur cst"<< endl << endl;
     delete r;
-    delete &s; // Désallocation de la référence dynamique
+    //r = new int(190);
 
-    // 4. Tableau dynamique (Pointeurs bruts)
-    int* arr = new int[10]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
-    std::cout << "Tableau (brut): ";
-    for (int i = 0; i < 10; ++i) {
-        std::cout << arr[i] << " ";
-    }
-    std::cout << std::endl << std::endl;
-
-    // Désallocation du tableau
-    delete[] arr;
-
-
-    // ---------------------------------------------------------
-    // --- PARTIE 2 : Pointeurs Intelligents (Smart Pointers) ---
-    // ---------------------------------------------------------
-    std::cout << "--- PARTIE 2 : Smarts Pointeurs ---" << std::endl;
-
-    // 1. Smart pointers simples (std::unique_ptr)
-    auto p_smart = std::make_unique<int>(10);
+    int nombre = 60;
+    int &s = nombre;
     
-    // unique_ptr vers const int
-    std::unique_ptr<const int> q_smart = std::make_unique<int>(20);
+    cout << "nombre = " << nombre << " s = " << s << " puis s = 10 " << endl;
+    s = 10;
+    cout << "nombre = " << nombre << " s = " << s << endl << endl;
 
-    // const unique_ptr (le pointeur lui-même est const)
-    const auto r_smart = std::make_unique<int>(30);
+}
 
-    std::cout << "Smart Pointers alloués automatiquement (valeurs : " 
-              << *p_smart << ", " << *q_smart << ", " << *r_smart << ")." << std::endl;
+void exercice1_partie2() {
 
-    // 2. Tableau dynamique géré par unique_ptr
-    auto arr_smart = std::make_unique<int[]>(10);
-
-    for (int i = 0; i < 10; ++i) {
-        arr_smart[i] = i + 1;
-    }
-
-    std::cout << "Tableau Smart Pointers: ";
-    for (int i = 0; i < 10; ++i) {
-        std::cout << arr_smart[i] << " ";
-    }
-    std::cout << std::endl;
+    unique_ptr<int> p  = make_unique<int>(42);
+    cout <<" *p = " << *p << " p est deleted tt seul"<<  endl; 
+    shared_ptr<const int>q = make_shared<const int>(30);
+    shared_ptr Q2 = q;
+    cout << "shared_ptr = " << q << " *q = " << *q <<  " apres 2 utilisation le pointeur et libéré"<<endl;
+    cout << "shared_ptr = " << Q2 << " *Q2 = " << *Q2 <<  "  apres 2 utilisation le pointeur et libéré"<<endl;
     
-    // Pas besoin de 'delete', la mémoire est libérée automatiquement à la fin de la fonction.
+
+
 }
 
 
-// ---------------------------Exercice 2 ---------------------------:
 
-int somme(int a, int b) {
-    std::cout << "[Appel version int]\n";
-    return a + b;
-}
+int main() {
+    exo1_partie1();
+    exercice1_partie2();
 
-
-float somme(float a, float b) {
-    std::cout << "[Appel version float]\n";
-    return a + b;
-}
-
-void somme(const int t1[10], const int t2[10], int res[10]) {
-    std::cout << "[Appel version tableau]\n";
-    for (int i = 0; i < 10; ++i) {
-        res[i] = t1[i] + t2[i];
-    }
+    return 0;
 }
