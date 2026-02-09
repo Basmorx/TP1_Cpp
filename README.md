@@ -4,12 +4,12 @@
 ### Exercice 1 :
 Compilation : 
 ```
-g++ -Wall -Wextra -std=c++17 Exo1.cpp 
+g++ -Wall -Wextra -std=c++17 Exo1.cpp -o exercice1
 ```
 
 Execution : 
 ```
-./a.out 
+./exercice1
 ```
 
 ##### Réponses :
@@ -24,18 +24,22 @@ int* cst // Pointeur cst sur un entier ( entier modifiable mais pas le pointeur)
 ### Exercice 2 :
 Compilation : 
 ```
-g++ -Wall -Wextra -std=c++17 Exo1.cpp 
+g++ -Wall -Wextra -std=c++17 Exo2.cpp -o exercice2
 ```
 
 Execution : 
 ```
-./a.out 
+./exercice2
 ```
+
+##### Réponses :
+
+Quand on envoie des shorts, la somme utilise la fonction pour les int.
 
 ### Exercice 3 :
 Compilation : 
 ```
-g++ -Wall -Wextra -std=c++17 Exo3.cpp 
+g++ -Wall -Wextra -std=c++17 Exo3.cpp -o exercice3
 ```
 
 Execution : 
