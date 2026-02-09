@@ -66,3 +66,42 @@ std::unique_ptr<Polynome> Polynome::integrer() const {
     // La constante d'intégration (x^0) est laissée à 0 par défaut
     return integral;
 }
+
+std::unique_ptr<Polynome> saisirPolynome() {
+    int degre;
+    std::cout << "=== Création du Polynôme ===" << std::endl;
+    std::cout << "Entrez le degré maximum (ex: 2 pour ax^2+bx+c) : ";
+    std::cin >> degre;
+
+    auto p = std::make_unique<Polynome>(degre);
+
+    std::cout << "Entrez les coefficients :" << std::endl;
+    // On demande du plus grand degré vers le plus petit pour une lecture naturelle
+    for (int i = degre; i >= 0; --i) {
+        double coef;
+        std::cout << "  Coef pour x^" << i << " : ";
+        std::cin >> coef;
+        p->setCoef(i, coef);
+    }
+    return p;
+}
+
+int main() {
+    // 1. Saisie utilisateur
+    auto poly = saisirPolynome();
+
+    std::cout << "\n--- Résultat Saisie ---" << std::endl;
+    poly->afficher();
+
+    // 2. Dérivation
+    std::cout << "\n--- Dérivée ---" << std::endl;
+    auto derivee = poly->deriver();
+    derivee->afficher();
+
+    // 3. Intégration
+    std::cout << "\n--- Primitive (C=0) ---" << std::endl;
+    auto primitive = poly->integrer();
+    primitive->afficher();
+
+    return 0;
+}
