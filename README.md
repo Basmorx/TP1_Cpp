@@ -44,30 +44,30 @@ g++ -Wall -Wextra -std=c++17 Exo3.cpp -o exercice3
 
 Execution : 
 ```
-./a.out 
+./exercice3
 ```
 
 
 ### Exercice 4 :
 Compilation : 
 ```
-g++ -Wall -Wextra -std=c++17 Exo1.cpp 
+g++ -Wall -Wextra -std=c++17 tableau.cpp -o exercice4
 ```
 
 Execution : 
 ```
-./a.out 
+./exercice4
 ```
 
 ### Exercice 5 :
 Compilation : 
 ```
-g++ -Wall -Wextra -std=c++17 Exo1.cpp 
+g++ -Wall -Wextra -std=c++17 Exo5.cpp -o exercice5
 ```
 
 Execution : 
 ```
-./a.out 
+./exercice5 
 ```
 
 ##### Info :
@@ -76,12 +76,12 @@ Classe dans le Exo5.h
 ### Exercice 6 :
 Compilation : 
 ```
-g++ -Wall -Wextra -std=c++17 Exo1.cpp 
+g++ -Wall -Wextra -std=c++17 polynome.cpp -o exercice6
 ```
 
 Execution : 
 ```
-./a.out 
+./exercice6
 ```
 g++ -Wall -Wextra -std=c++17 tableau.cpp -o Tableau
 
