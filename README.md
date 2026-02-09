@@ -12,6 +12,62 @@ Execution :
 ./a.out 
 ```
 
+### Exercice 2 :
+Compilation : 
+```
+g++ -Wall -Wextra -std=c++17 Exo1.cpp 
+```
+
+Execution : 
+```
+./a.out 
+```
+
+### Exercice 3 :
+Compilation : 
+```
+g++ -Wall -Wextra -std=c++17 Exo1.cpp 
+```
+
+Execution : 
+```
+./a.out 
+```
+
+### Exercice 4 :
+Compilation : 
+```
+g++ -Wall -Wextra -std=c++17 Exo1.cpp 
+```
+
+Execution : 
+```
+./a.out 
+```
+
+### Exercice 5 :
+Compilation : 
+```
+g++ -Wall -Wextra -std=c++17 Exo1.cpp 
+```
+
+Execution : 
+```
+./a.out 
+```
+
+### Exercice 6 :
+Compilation : 
+```
+g++ -Wall -Wextra -std=c++17 Exo1.cpp 
+```
+
+Execution : 
+```
+./a.out 
+```
+g++ -Wall -Wextra -std=c++17 tableau.cpp -o Tableau
+
 ##### Réponses :
 
 new oblige un delete
