@@ -4,12 +4,12 @@
 ### Exercice 1 :
 Compilation : 
 ```
-g++ -Wall -Wextra -std=c++17 Exo1.cpp 
+g++ -Wall -Wextra -std=c++17 Exo1.cpp -o exercice1
 ```
 
 Execution : 
 ```
-./a.out 
+./exercice1
 ```
 
 ### Exercice 2 :
