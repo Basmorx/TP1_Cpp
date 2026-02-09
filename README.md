@@ -83,7 +83,5 @@ Execution :
 ```
 ./exercice6
 ```
-g++ -Wall -Wextra -std=c++17 tableau.cpp -o Tableau
-
 
 
