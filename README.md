@@ -58,6 +58,8 @@ Execution :
 ```
 ./exercice4
 ```
+##### Info :
+Classe dans le fichier tableau.h
 
 ### Exercice 5 :
 Compilation : 
@@ -71,7 +73,7 @@ Execution :
 ```
 
 ##### Info :
-Classe dans le Exo5.h
+Classe dans le fichier Exo5.h
 
 ### Exercice 6 :
 Compilation : 
@@ -83,5 +85,7 @@ Execution :
 ```
 ./exercice6
 ```
+##### Info :
+Classe dans le fichier polynome.h
 
 
